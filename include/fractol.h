@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:02:14 by humarque          #+#    #+#             */
-/*   Updated: 2019/06/20 17:40:30 by humarque         ###   ########.fr       */
+/*   Updated: 2019/06/26 18:10:46 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef	struct		s_img
 typedef struct	s_mlx
 {
 	void	*mlx_ptr;
-	void	*mlx_window;
+	void	*win_ptr;
 	t_img	img;
 }				t_mlx;
 
@@ -51,5 +51,8 @@ typedef	struct s_fract
 	t_mlx mlx;	
 
 }				t_fract;
+
+void	init_window(t_fract *fract);
+void	mandelbrot(t_fract *fract);
 
 #endif
