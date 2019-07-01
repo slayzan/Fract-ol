@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:02:14 by humarque          #+#    #+#             */
-/*   Updated: 2019/06/26 18:10:46 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/01 15:42:34 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef	struct		s_img
 {
 	void	*img_ptr;
-	int		*data;
+	char		*data;
 	int		bpp;
 	int		size_l;
 	int		endian;
@@ -34,25 +34,36 @@ typedef struct	s_mlx
 	t_img	img;
 }				t_mlx;
 
+
+typedef struct s_color
+{
+	double depth;
+	int r;
+	int g;
+	int b;
+}				t_color;
+
 typedef	struct s_fract
 {
 	int iter;
-	int zx;
-	int zy;
-	int zoom;
+	double zx;
+	double zy;
+	double zoom;
 	int itermax;
-	int x0;
-	int y0;
-	int x1;
-	int y1;
-	int y;
-	int x;
+	double x0;
+	double y0;
+	double x1;
+	double y1;
+	double y;
+	double x;
 	int num;
-	t_mlx mlx;	
+	t_mlx mlx;
+	t_color color;
 
 }				t_fract;
 
 void	init_window(t_fract *fract);
 void	mandelbrot(t_fract *fract);
-
+void	draw_color(t_fract *fract);
+void	black(t_fract *fract);
 #endif

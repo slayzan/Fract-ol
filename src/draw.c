@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:16:42 by humarque          #+#    #+#             */
-/*   Updated: 2019/06/26 18:07:48 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/01 15:40:07 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	mandelbrot(t_fract *fract)
 		fract->iter++;
 	}
 	if (fract->iter == fract->itermax)
-		fract->mlx.img.data[fract->x * WIDTH + fract->y] = 0xFFFFFF;
-}
+		black(fract);
+	else
+		draw_color(fract);
+}	
