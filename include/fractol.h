@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:02:14 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/01 15:42:34 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/17 18:36:27 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_color
 typedef	struct s_fract
 {
 	int iter;
+	int julia;
 	double zx;
 	double zy;
 	double zoom;
@@ -54,6 +55,8 @@ typedef	struct s_fract
 	double y0;
 	double x1;
 	double y1;
+	double x2;
+	double y2;
 	double y;
 	double x;
 	int num;
@@ -64,6 +67,7 @@ typedef	struct s_fract
 
 void	init_window(t_fract *fract);
 void	mandelbrot(t_fract *fract);
+void	ft_julia(t_fract *fract);
 void	draw_color(t_fract *fract);
 void	black(t_fract *fract);
 #endif

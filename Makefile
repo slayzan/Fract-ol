@@ -6,11 +6,11 @@
 #    By: humarque <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/19 12:58:24 by humarque          #+#    #+#              #
-#    Updated: 2019/07/01 14:51:31 by humarque         ###   ########.fr        #
+#    Updated: 2019/07/17 17:34:34 by humarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = fractol
-CC = gcc -g
+CC = gcc
 
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:31:48 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/01 15:38:18 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/17 18:22:08 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/fractol.h"
@@ -20,6 +20,7 @@ static void	ft_init(t_fract *fract)
 	fract->color.r = 255;
 	fract->color.b = 255;
 	fract->color.g = 255;
+	fract->julia = 1; 
 	fract->color.depth = 1;
 
 }
@@ -35,6 +36,8 @@ static void	make_draw(t_fract *fract)
 		{
 			if (fract->num == 1)
 				mandelbrot(fract);
+			if (fract->num == 2)
+				ft_julia(fract);
 			fract->y++;
 		}
 		fract->x++;
@@ -62,6 +65,8 @@ int main(int argc,char **argv)
 	{
 		if (ft_strcmp(argv[1], "1") == 0)
 			fract.num = 1;
+		if (ft_strcmp(argv[2], "2") == 0)
+			fract.num = 2;
 		if (fract.num)
 			init_window(&fract);
 	}	
