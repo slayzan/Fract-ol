@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:16:42 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/17 18:52:49 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/22 18:39:25 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	mandelbrot(t_fract *fract)
 {
+
 	double temp;
 
 	temp = 0;
@@ -22,13 +23,13 @@ void	mandelbrot(t_fract *fract)
 	fract->iter = 0;
 	fract->x0 = fract->zx;
 	fract->y0 = fract->zy;
-	while (fract->zx * fract->zx + fract->zy * fract->zy < 4
+	while (fract->zx  * fract->zx + fract->zy *fract->zy  < 4
 			&& fract->iter < fract->itermax)
 	{
 		temp = fract->zx;
-		fract->zx = fract->zx * fract->zx - fract->zy * fract->zy + fract->x0;
-		fract->zy = 2 * temp * fract->zy + fract->y0;
-		fract->iter++;
+		fract->zx = fract->zx * fract->zx - fract->zy * fract->zy  + fract->x0;
+		fract->zy = 2 * temp * fract->zy  + fract->y0;
+ 		fract->iter++;
 	}
 	if (fract->iter == fract->itermax)
 		black(fract);
@@ -44,20 +45,18 @@ void	ft_julia(t_fract *fract)
 	fract->zx = (fract->x - fract->x1 / 2) / fract->zoom;
 	fract->zy = (fract->y - fract->y1 / 2) / fract->zoom;
 	fract->iter = 0;
-	fract->x0 = fract->zx;
-	fract->y0 = fract->zy;
+	fract->x0 = 0.258;
+	fract->y0 = 0.01;
 	while (fract->zx * fract->zx + fract->zy * fract->zy < 4
 			&& fract->iter < fract->itermax)
 	{
 		temp = fract->zx;
-		fract->zx = fract->zx * fract->zx - fract->zy * fract->zy + fract->x0;
-		fract->zy = 2 * temp - fract->zy + fract->y0;
+		fract->zx = fract->zx *fract->zx -  fract->zy * fract->zy + fract->x0;
+		fract->zy = 2 * temp * fract->zy + fract->y0;
 		fract->iter++;
 	}
 	if (fract->iter == fract->itermax)
-		printf("test");	
-	//	black(fract);
+		black(fract);
 	else
-		printf("hello");
-	//	draw_color(fract);
+		draw_color(fract);
 }

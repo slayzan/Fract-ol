@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
@@ -6,13 +6,14 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:22:26 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/19 16:07:47 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/22 18:37:18 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/fractol.h"
 
 void	ft_init(t_fract *fract)
 {
+
 	fract->itermax = 40;
 	fract->x1 = WIDTH;
 	fract->y1 = HEIGHT;
@@ -21,6 +22,7 @@ void	ft_init(t_fract *fract)
 	fract->color.b = 255;
 	fract->color.g = 255;
 	fract->color.depth = 1;
+	
 }
 void	make_draw(t_fract *fract)
 {
@@ -64,8 +66,10 @@ int main	(int argc, char **argv)
 	{
 		if (ft_strcmp(argv[1], "1") == 0)
 			fract.num = 1;
-		else if (ft_strcmp(argv[2], "2") == 0)
+		else if (ft_strcmp(argv[1], "2") == 0)
 			fract.num = 2;
+		else if (ft_strcmp(argv[1], "3") == 0)
+			fract.num = 3;
 		if (fract.num < 5)
 			ft_mlx(&fract);
 	}
