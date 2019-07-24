@@ -6,7 +6,7 @@
 #    By: humarque <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/19 12:58:24 by humarque          #+#    #+#              #
-#    Updated: 2019/07/19 15:55:58 by humarque         ###   ########.fr        #
+#    Updated: 2019/07/24 17:39:28 by humarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = fractol
@@ -19,7 +19,7 @@ INC_PATH = ./include/ $(LIB_PATH)libft/include/
 
 GCC_FLGS = -Werror -Wextra -Wall
 
-SRC_NAME = draw.c main.c  color.c 
+SRC_NAME = draw.c main.c  color.c mouse.c key_hook.c 
 
 GCC_LIBS = -lmlx -framework OpenGL -framework Appkit
 

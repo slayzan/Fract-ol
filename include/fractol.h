@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:02:14 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/22 18:34:08 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/24 17:56:19 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,9 @@ void	mandelbrot(t_fract *fract);
 void	ft_julia(t_fract *fract);
 void	draw_color(t_fract *fract);
 void	black(t_fract *fract);
+int		mouse_motion(int x, int y, t_fract *fract);
+void	make_draw(t_fract *fract);
+int		key_hook(int keycode, t_fract *fract);
+void	ft_init(t_fract *fract);
+void	ft_restart(int keycode, t_fract *fract);
 #endif

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:22:26 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/22 18:37:18 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/24 17:56:09 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/fractol.h"
@@ -14,6 +14,7 @@
 void	ft_init(t_fract *fract)
 {
 
+	fract->julia = 1;
 	fract->itermax = 40;
 	fract->x1 = WIDTH;
 	fract->y1 = HEIGHT;
@@ -53,7 +54,9 @@ void	ft_mlx(t_fract *fract)
    fract->mlx.img.data = mlx_get_data_addr(fract->mlx.img.img_ptr, &fract->mlx.img.bpp, &fract->mlx.img.size_l, &fract->mlx.img.endian);
    ft_init(fract);
    make_draw(fract);
-mlx_loop(fract->mlx.mlx_ptr);   
+   mlx_hook(fract->mlx.win_ptr, 2, 0, key_hook, fract);
+   mlx_hook(fract->mlx.win_ptr, 6, 0, mouse_motion, fract);
+	mlx_loop(fract->mlx.mlx_ptr);
 }
 
 

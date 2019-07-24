@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:16:42 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/22 18:39:25 by humarque         ###   ########.fr       */
+/*   Updated: 2019/07/24 17:45:12 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	ft_julia(t_fract *fract)
 	fract->zx = (fract->x - fract->x1 / 2) / fract->zoom;
 	fract->zy = (fract->y - fract->y1 / 2) / fract->zoom;
 	fract->iter = 0;
-	fract->x0 = 0.258;
-	fract->y0 = 0.01;
+	fract->x0 = fract->x2;
+	fract->y0 = fract->y2;
 	while (fract->zx * fract->zx + fract->zy * fract->zy < 4
 			&& fract->iter < fract->itermax)
 	{
