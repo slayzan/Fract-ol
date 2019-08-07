@@ -6,15 +6,14 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:16:42 by humarque          #+#    #+#             */
-/*   Updated: 2019/07/24 17:45:12 by humarque         ###   ########.fr       */
+/*   Updated: 2019/08/07 17:15:27 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void	mandelbrot(t_fract *fract)
+void		mandelbrot(t_fract *fract)
 {
-
 	double temp;
 
 	temp = 0;
@@ -23,13 +22,14 @@ void	mandelbrot(t_fract *fract)
 	fract->iter = 0;
 	fract->x0 = fract->zx;
 	fract->y0 = fract->zy;
-	while (fract->zx  * fract->zx + fract->zy *fract->zy  < 4
+	while (fract->zx * fract->zx + fract->zy * fract->zy < 4
 			&& fract->iter < fract->itermax)
 	{
 		temp = fract->zx;
-		fract->zx = fract->zx * fract->zx - fract->zy * fract->zy  + fract->x0;
-		fract->zy = 2 * temp * fract->zy  + fract->y0;
- 		fract->iter++;
+		fract->zx = (fract->zx * fract->zx) -
+			(fract->zy * fract->zy) + fract->x0;
+		fract->zy = 2 * temp * fract->zy + fract->y0;
+		fract->iter++;
 	}
 	if (fract->iter == fract->itermax)
 		black(fract);
@@ -37,7 +37,7 @@ void	mandelbrot(t_fract *fract)
 		draw_color(fract);
 }
 
-void	ft_julia(t_fract *fract)
+void		ft_julia(t_fract *fract)
 {
 	double temp;
 
@@ -51,7 +51,7 @@ void	ft_julia(t_fract *fract)
 			&& fract->iter < fract->itermax)
 	{
 		temp = fract->zx;
-		fract->zx = fract->zx *fract->zx -  fract->zy * fract->zy + fract->x0;
+		fract->zx = fract->zx * fract->zx - fract->zy * fract->zy + fract->x0;
 		fract->zy = 2 * temp * fract->zy + fract->y0;
 		fract->iter++;
 	}
