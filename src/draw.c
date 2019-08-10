@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:16:42 by humarque          #+#    #+#             */
-/*   Updated: 2019/08/07 17:34:50 by humarque         ###   ########.fr       */
+/*   Updated: 2019/08/10 15:24:47 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ void		ft_burningship(t_fract *fract)
 	fract->zy = (fract->y - fract->y1 / 2) / fract->zoom - 0.5;
 	fract->x0 = fract->zx;
 	fract->y0 = fract->zy;
-	fract->itert = 0;
+	fract->iter = 0;
 	while (fract->zx * fract->zx + fract->zy * fract->zy < 4
-			&& fract->itert < fract->max_itert)
+			&& fract->iter < fract->itermax)
 	{
 		temp = fract->zx;
 		fract->zx = fract->zx * fract->zx - fract->zy * fract->zy + fract->x0;
 		fract->zy = 2 * ft_dabs(temp * fract->zy) + fract->y0;
-		fract->itert++;
+		fract->iter++;
 	}
-	if (fract->itert == fract->max_itert)
-		ft_black(fract);
+	if (fract->iter == fract->itermax)
+		black(fract);
 	else
-		ft_itert(fract);
+		draw_color(fract);
 }
-}
+

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 16:32:55 by humarque          #+#    #+#             */
-/*   Updated: 2019/08/07 16:33:46 by humarque         ###   ########.fr       */
+/*   Updated: 2019/08/10 15:18:20 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void		make_draw(t_fract *fract)
 				mandelbrot(fract);
 			else if (fract->num == 2)
 				ft_julia(fract);
+			else if (fract->num == 3)
+				ft_burningship(fract);
 			fract->y++;
 		}
 		fract->x++;
@@ -63,6 +65,14 @@ void		ft_mlx(t_fract *fract)
 	mlx_loop(fract->mlx.mlx_ptr);
 }
 
+void	ft_print_error()
+{
+	ft_putendl("usage: ./fractol <number>");
+    ft_putendl("1 = Mandelbrot");
+    ft_putendl("2 = Julia");
+    ft_putendl("3 = Burningship");	
+}
+
 int			main(int argc, char **argv)
 {
 	t_fract fract;
@@ -76,9 +86,9 @@ int			main(int argc, char **argv)
 			fract.num = 2;
 		else if (ft_strcmp(argv[1], "3") == 0)
 			fract.num = 3;
-		if (fract.num < 5)
+		if (fract.num < 4)
 			ft_mlx(&fract);
 	}
 	else
-		printf("no");
+		ft_print_error();
 }
