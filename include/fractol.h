@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:02:14 by humarque          #+#    #+#             */
-/*   Updated: 2019/08/10 15:17:32 by humarque         ###   ########.fr       */
+/*   Updated: 2019/08/13 03:09:11 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ void			ft_restart(int keycode, t_fract *fract);
 void			iter_color(int keycode, t_fract *fract);
 void			ft_move(int keycode, t_fract *fract);
 void			ft_print_error();
-int			ft_dabs(double x);
+double			ft_dabs(double x);
 #endif

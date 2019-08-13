@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 17:16:07 by humarque          #+#    #+#             */
-/*   Updated: 2019/08/10 15:14:25 by humarque         ###   ########.fr       */
+/*   Updated: 2019/08/13 03:08:57 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	black(t_fract *fract)
 	fract->mlx.img.data[(((int)fract->y * WIDTH + (int)fract->x) * 4)] = 0;
 }
 
-int		ft_dabs(double x)
+double		ft_dabs(double x)
 {
 	if (x < 0)
 		return (-x);
